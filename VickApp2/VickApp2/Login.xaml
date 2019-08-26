@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<vickApp2:XBasePage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vickApp2="clr-namespace:VickApp2;assembly=VickApp2"
+             mc:Ignorable="d"
+             x:Class="VickApp2.Login">
+    <ContentPage.Content>
+        <StackLayout x:Name="cpLogin">
+            <Label Text="系統登入"
+                   FontSize="35"
+                   FontAttributes="Bold"
+                   Margin="0,50,0,0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"
+                   />
+
+            <Grid HorizontalOptions="Center"
+                  VerticalOptions="CenterAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label x:Name="lblId"
+                       Text="帳號" 
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Center" 
+                       VerticalTextAlignment="Center" />
+                <Entry x:Name="txId"
+                       Placeholder="請輸入帳號"
+                       Grid.Row="0"
+                       Grid.Column="1"
+                       Text="" />
+                <Label x:Name="lblPwd"
+                       Text="密碼"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+                <Entry x:Name="txPwd"
+                       Placeholder="請輸入帳號"
+                       Text=""
+                       IsPassword="True"
+                       Grid.Row="1"
+                       Grid.Column="1" />
+
+                <Button Grid.ColumnSpan="2"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        x:Name="btnLogin"
+                        Text="登入"
+                        FontSize="16"
+                        FontAttributes="Bold"
+                        BackgroundColor="BurlyWood"
+                        Clicked="BtnLogin_OnClicked" />
+            </Grid>
+            <Label Margin="0,0,30,50"
+                   HorizontalOptions="End"
+                   VerticalOptions="EndAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="QA LINE"
+                              FontSize="12"
+                              TextColor="DarkGreen"
+                              TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LINE_LinkCommand}"
+                                                      CommandParameter="line://oaMeassage/@Vick"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</vickApp2:XBasePage>
